@@ -20,7 +20,7 @@ public class main {
     public static void main(String[] args) {
         try {
             CategoriaDTO dto = new CategoriaDTO();
-            dto.getEntidad().setIdCategoria(2);
+            dto.getEntidad().setIdCategoriaProducto(2);
             dto.getEntidad().setNombreCategoria("ESCOM");
             dto.getEntidad().setDescripcionCategoria("Libros de ESCOM");
             

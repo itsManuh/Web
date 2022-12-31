@@ -27,7 +27,7 @@ public class CategoriaDTO implements Serializable{
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Clave: ").append(entidad.getIdCategoria()).append("\n");
+        sb.append("Clave: ").append(entidad.getIdCategoriaProducto()).append("\n");
         sb.append("Nombre: ").append(entidad.getNombreCategoria()).append("\n");
         sb.append("Descripcion: ").append(entidad.getDescripcionCategoria()).append("\n");
         return sb.toString();

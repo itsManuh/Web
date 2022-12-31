@@ -1,8 +1,4 @@
-<%-- 
-    Document   : listadoCategorias
-    Created on : 15 nov. 2022, 09:11:29
-    Author     : levi1
---%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

@@ -1,8 +1,5 @@
-<%-- 
-    Document   : mostrarCategoria
-    Created on : 13 dic. 2022, 20:15:59
-    Author     : levi1
---%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

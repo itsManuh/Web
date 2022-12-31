@@ -144,7 +144,7 @@ public class CategoriaServlet extends HttpServlet {
     private void actualizarCategoria(HttpServletRequest request, HttpServletResponse response) {
         CategoriaDAO dao = new CategoriaDAO();
         CategoriaDTO dto = new CategoriaDTO();
-        dto.getEntidad().setIdCategoria(Integer.parseInt(request.getParameter("id")));
+        dto.getEntidad().setIdCategoriaProducto(Integer.parseInt(request.getParameter("id")));
         try {
             dto = dao.read(dto);
             request.setAttribute("dto", dto);
@@ -158,7 +158,7 @@ public class CategoriaServlet extends HttpServlet {
     private void eliminarCategoria(HttpServletRequest request, HttpServletResponse response) {
         CategoriaDAO dao = new CategoriaDAO();
         CategoriaDTO dto = new CategoriaDTO();
-        dto.getEntidad().setIdCategoria(Integer.parseInt(request.getParameter("id")));
+        dto.getEntidad().setIdCategoriaProducto(Integer.parseInt(request.getParameter("id")));
         try {
             dto = dao.read(dto);
             dao.delete(dto);
@@ -172,7 +172,7 @@ public class CategoriaServlet extends HttpServlet {
     private void verCategoria(HttpServletRequest request, HttpServletResponse response) {
         CategoriaDAO dao = new CategoriaDAO();
         CategoriaDTO dto = new CategoriaDTO();
-        dto.getEntidad().setIdCategoria(Integer.parseInt(request.getParameter("id")));
+        dto.getEntidad().setIdCategoriaProducto(Integer.parseInt(request.getParameter("id")));
         try {
             dto = dao.read(dto);
             request.setAttribute("dto", dto);
@@ -189,7 +189,7 @@ public class CategoriaServlet extends HttpServlet {
         dto.getEntidad().setNombreCategoria(request.getParameter("nameCat"));
         dto.getEntidad().setDescripcionCategoria(request.getParameter("descCat"));
         if (request.getParameter("idCat") != "") {
-            dto.getEntidad().setIdCategoria(Integer.parseInt(request.getParameter("idCat")));
+            dto.getEntidad().setIdCategoriaProducto(Integer.parseInt(request.getParameter("idCat")));
             try {
                 dao.update(dto);
                 listadoDeCategorias(request, response);

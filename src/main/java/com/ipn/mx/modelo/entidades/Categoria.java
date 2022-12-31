@@ -18,9 +18,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Categoria implements Serializable{
     
-    private int idCategoria;
+    private int idCategoriaProducto;
     private String nombreCategoria;
     private String descripcionCategoria;
-    
+
+  
     
 }

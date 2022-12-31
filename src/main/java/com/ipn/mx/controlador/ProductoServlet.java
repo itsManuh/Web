@@ -148,7 +148,7 @@ public class ProductoServlet extends HttpServlet {
         dto.getEntidad().setIdProducto(Integer.parseInt(request.getParameter("id")));
         try {
             dto = dao.read(dto);
-            dtoCat.getEntidad().setIdCategoria(dto.getEntidad().getIdCategoria());
+            dtoCat.getEntidad().setIdCategoriaProducto(dto.getEntidad().getIdCategoria());
             dtoCat = daoCat.read(dtoCat);
             lista = daoCatLista.readAll();
             request.setAttribute("listado", lista);

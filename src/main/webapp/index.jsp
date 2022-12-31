@@ -1,8 +1,4 @@
-<%-- 
-    Document   : index
-    Created on : 10 nov. 2022, 11:23:43
-    Author     : levi1
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html lang="en">
@@ -29,10 +25,10 @@
 
         <nav>
             <div class="nav-wrapper green darken-1">
-                <a href="index.html" class="brand-logo">Proyecto1</a>
+                <a href="index.jsp" class="brand-logo">Proyecto1</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="./CategoriaServlet?accion=listaDeCategorias">Categorías</a></li>
+                    <li><a href="CategoriaServlet?accion=listaDeCategorias">Categorías</a></li>
                     <li><a href="ProductoServlet?accion=listaDeProductos">Productos</a></li>
                     <li><a href="MovimientosServlet?accion=listaDeMovimientos">Movimientos</a></li>
                 </ul>
@@ -40,7 +36,7 @@
         </nav>
 
         <ul class="sidenav" id="mobile-demo">
-            <li><a href="./CategoriaServlet?accion=listadoDeCategorias">Categorías</a></li>
+            <li><a href="CategoriaServlet?accion=listadoDeCategorias">Categorías</a></li>
             <li><a href="ProductoServlet?accion=listaDeProductos">Productos</a></li>
             <li><a href="MovimientosServlet?accion=listaDeMovimientos">Movimientos</a></li>
         </ul>
