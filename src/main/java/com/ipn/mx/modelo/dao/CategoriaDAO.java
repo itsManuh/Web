@@ -1,6 +1,5 @@
 package com.ipn.mx.modelo.dao;
 
-
 import com.ipn.mx.modelo.dto.CategoriaDTO;
 import com.ipn.mx.modelo.dto.GraficaDTO;
 import java.sql.Connection;
@@ -18,22 +17,22 @@ public class CategoriaDAO {
     private static final String SQL_INSERT = 
             "insert into CategoriaProducto(nombreCategoria, descripcionCategoria) values(?, ?)";
     private static final String SQL_UPDATE = 
-            "update CategoriaProducto set nombreCategoria  = ?, descripcionCategoria = ? where idCategoria = ?";
+            "update CategoriaProducto set nombreCategoria  = ?, descripcionCategoria = ? where idCategoriaProducto = ?";
     private static final String SQL_DELETE = 
-            "delete from CategoriaProducto where idCategoria = ?";
+            "delete from CategoriaProducto where idCategoriaProducto = ?";
     private static final String SQL_SELECT_ALL = 
             "select * from CategoriaProducto";
     private static final String SQL_SELECT = 
-            "select * from CategoriaProducto where idCategoria = ?";
+            "select * from CategoriaProducto where idCategoriaProducto = ?";
     private static final String SQL_GRAFICAR = 
-            "select CategoriaProducto.nombreCategoria as Nombre, count(CategoriaProducto.idCategoria) as Cantidad "
-            + "from CategoriaProducto INNER JOIN Producto ON CategoriaProducto.idCategoria = Producto.idCategoria "
-            + "group by Producto.idCategoria";
+            "select CategoriaProducto.nombreCategoria as Nombre, count(Categoria.idCategoriaProducto) as Cantidad "
+            + "from CategoriaProducto INNER JOIN Producto ON Categoria.idCategoriaProducto = Producto.idCategoriaProducto "
+            + "group by Producto.idCategoriaProducto";
     private Connection con;
     
     public Connection obtenerConexion(){
         String usuario = "root";
-        String clave = "root";
+        String clave = "123456789";
         String driverMysql = "com.mysql.cj.jdbc.Driver";
         String url = "jdbc:mysql://localhost:3306/practica3";
         try{
@@ -116,7 +115,7 @@ public class CategoriaDAO {
         List lista = new ArrayList();
         while(rs.next()){
             CategoriaDTO dto = new CategoriaDTO();
-            dto.getEntidad().setIdCategoriaProducto(rs.getInt("idCategoria"));
+            dto.getEntidad().setIdCategoriaProducto(rs.getInt("idCategoriaProducto"));
             dto.getEntidad().setNombreCategoria(rs.getString("nombreCategoria"));
             dto.getEntidad().setDescripcionCategoria(rs.getString("descripcionCategoria"));
             lista.add(dto);

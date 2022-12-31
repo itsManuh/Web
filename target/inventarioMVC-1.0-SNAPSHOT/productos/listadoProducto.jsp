@@ -79,7 +79,7 @@
                                 <td WIDTH='25%'><c:out value="${dto.entidad.descripcionProducto}"/></td>
                                 <td WIDTH='10%'><c:out value="${dto.entidad.precio}"/></td>
                                 <td WIDTH='10%'><c:out value="${dto.entidad.existencia}"/></td>
-                                <td WIDTH='5%'><c:out value="${dto.entidad.idCategoria}"/></td>
+                                <td WIDTH='5%'><c:out value="${dto.entidad.idCategoriaProducto}"/></td>
 
 
                                 <td WIDTH='15%'>

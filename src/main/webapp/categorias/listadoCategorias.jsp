@@ -1,4 +1,8 @@
-
+<%-- 
+    Document   : listadoCategorias
+    Created on : 15 nov. 2022, 09:11:29
+    Author     : levi1
+--%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -72,19 +76,19 @@
                         <c:forEach items="${listado}" var="dto">
                             <tr>
                                 <td WIDTH='10%'>
-                                    <a href='CategoriaServlet?accion=ver&id=<c:out value="${dto.entidad.idCategoria}"/>' class='waves-effect waves-light btn green lighten-1'>
-                                        <c:out value="${dto.entidad.idCategoria}"/>
+                                    <a href='CategoriaServlet?accion=ver&id=<c:out value="${dto.entidad.idCategoriaProducto}"/>' class='waves-effect waves-light btn green lighten-1'>
+                                        <c:out value="${dto.entidad.idCategoriaProducto}"/>
                                     </a>
                                 </td>
 
                                 <td WIDTH='25%'><c:out value="${dto.entidad.nombreCategoria}"/></td>
                                 <td WIDTH='35%'><c:out value="${dto.entidad.descripcionCategoria}"/></td>
                                 <td WIDTH='15%'>
-                                    <a href='CategoriaServlet?accion=actualizar&id=<c:out value="${dto.entidad.idCategoria}"/>' class='waves-effect waves-light btn blue lighten-1'>
+                                    <a href='CategoriaServlet?accion=actualizar&id=<c:out value="${dto.entidad.idCategoriaProducto}"/>' class='waves-effect waves-light btn blue lighten-1'>
                                         Actualizar
                                     </a>
                                 </td>
-                                <td WIDTH='15%'><a href='CategoriaServlet?accion=eliminar&id=<c:out value="${dto.entidad.idCategoria}"/>'' class='waves-effect waves-light btn red lighten-1'>Eliminar</a></td>
+                                <td WIDTH='15%'><a href='CategoriaServlet?accion=eliminar&id=<c:out value="${dto.entidad.idCategoriaProducto}"/>'' class='waves-effect waves-light btn red lighten-1'>Eliminar</a></td>
                             </tr>
                         </c:forEach>
                     </tbody> 

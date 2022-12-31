@@ -55,7 +55,7 @@
                 <h2 align="center">Agregar nueva categoría</h2>
                 <form action="CategoriaServlet?accion=guardar" method="post" id="FormAgregarCategoria" name="FormAgregarCategoria">
                     <input id="idCat" name="idCat" type="hidden" 
-                           value="<c:out value="${dto.entidad.idCategoria}"/>"
+                           value="<c:out value="${dto.entidad.idCategoriaProducto}"/>"
                            >
                     <div class="input-field col s10 m10 l10 offset-l1 offset-m1 offset-s1">
                         <input id="nameCat" 

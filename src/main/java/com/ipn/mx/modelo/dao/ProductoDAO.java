@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.ipn.mx.modelo.dao;
 
 
@@ -22,9 +18,9 @@ import java.util.logging.Logger;
  */
 public class ProductoDAO {
     private static final String SQL_INSERT = 
-            "insert into producto(nombreProducto,descripcionProducto,precio,existencia,idCategoria) values(?,?,?,?,?)";
+            "insert into producto(nombreProducto,descripcionProducto,precio,existencia,idCategoriaProducto) values(?,?,?,?,?)";
     private static final String SQL_UPDATE = 
-            "update producto set nombreProducto  = ?, descripcionProducto = ?, precio = ?, existencia = ?, idCategoria = ? where idProducto = ?";
+            "update producto set nombreProducto  = ?, descripcionProducto = ?, precio = ?, existencia = ?, idCategoriaProducto = ? where idProducto = ?";
     private static final String SQL_DELETE = 
             "delete from producto where idProducto = ?";
     private static final String SQL_SELECT_ALL = 
@@ -35,7 +31,7 @@ public class ProductoDAO {
     
     private Connection obtenerConexion(){
         String usuario = "root";
-        String clave = "root";
+        String clave = "123456789";
         String driverMysql = "com.mysql.cj.jdbc.Driver";
         String url = "jdbc:mysql://localhost:3306/practica3";
         
@@ -60,7 +56,7 @@ public class ProductoDAO {
             ps.setString(2, dto.getEntidad().getDescripcionProducto());
             ps.setInt(3, dto.getEntidad().getPrecio());
             ps.setInt(4, dto.getEntidad().getExistencia());
-            ps.setInt(5, dto.getEntidad().getIdCategoria());
+            ps.setInt(5, dto.getEntidad().getIdCategoriaProducto());
             ps.executeUpdate();
         }finally{
             if(ps != null) ps.close();;
@@ -77,7 +73,7 @@ public class ProductoDAO {
             ps.setString(2, dto.getEntidad().getDescripcionProducto());
             ps.setInt(3, dto.getEntidad().getPrecio());
             ps.setInt(4, dto.getEntidad().getExistencia());
-            ps.setInt(5, dto.getEntidad().getIdCategoria());
+            ps.setInt(5, dto.getEntidad().getIdCategoriaProducto());
             ps.setInt(6, dto.getEntidad().getIdProducto());
             ps.executeUpdate();
         }finally{
@@ -133,7 +129,7 @@ public class ProductoDAO {
             dto.getEntidad().setDescripcionProducto(rs.getString("descripcionProducto"));
             dto.getEntidad().setPrecio(rs.getInt("precio"));
             dto.getEntidad().setExistencia(rs.getInt("existencia"));
-            dto.getEntidad().setIdCategoria(rs.getInt("idCategoria"));
+            dto.getEntidad().setIdCategoriaProducto(rs.getInt("idCategoriaProducto"));
             lista.add(dto);
         }
         return lista;

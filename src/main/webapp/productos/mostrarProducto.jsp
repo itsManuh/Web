@@ -67,7 +67,7 @@
                         </tr>
                         <tr>
                             <td width='35%'><b>ID categoria</b></td>
-                            <td width='65%'><c:out value="${dto.entidad.idCategoria}"/></td>
+                            <td width='65%'><c:out value="${dto.entidad.idCategoriaProducto}"/></td>
                         </tr>
 
                 </table>           

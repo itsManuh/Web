@@ -1,5 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%-- 
+    Document   : mostrarCategoria
+    Created on : 13 dic. 2022, 20:15:59
+    Author     : levi1
+--%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -44,7 +47,7 @@
                     <tbody>
                         <tr>
                             <td width='35%'><b>Identificador</b></td>
-                            <td width='65%'><c:out value="${dto.entidad.idCategoria}"/></td>
+                            <td width='65%'><c:out value="${dto.entidad.idCategoriaProducto}"/></td>
                         </tr>
                         <tr>
                             <td width='35%'><b>Descripción</b></td>
@@ -61,7 +64,7 @@
                 <br>
             </div>
             <div class='col s4 m4 l4 offset-m4 offset-l4 offset-s4' align='center'>
-                <a class='waves-effect waves-light btn green lighten-1' href='listadoCategorias.jsp'>Listado de categorias</a>
+                <a class='waves-effect waves-light btn green lighten-1' href='CategoriaServlet?accion=listaDeCategorias'>Listado de categorias</a>
             </div>
             <div class='col s12 m12 l12'><br></div>
             <br>
