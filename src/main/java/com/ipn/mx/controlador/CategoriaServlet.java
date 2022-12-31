@@ -57,8 +57,6 @@ public class CategoriaServlet extends HttpServlet {
             default:
                 break;
         }
-
-
     }
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -111,7 +109,6 @@ public class CategoriaServlet extends HttpServlet {
         } catch (SQLException | ServletException | IOException ex) {
             Logger.getLogger(CategoriaServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
     private void nuevaCategoria(HttpServletRequest request, HttpServletResponse response) {
@@ -201,7 +198,7 @@ public class CategoriaServlet extends HttpServlet {
 
         RequestDispatcher rd = request.getRequestDispatcher("/grafica.jsp");
         try {
-            ChartUtils.saveChartAsPNG(new File(archivo), chart, 800, 600);
+            ChartUtils.saveChartAsPNG(new File(archivo), chart, 1200, 600);
             rd.forward(request, response);
         } catch (IOException | ServletException ex) {
             Logger.getLogger(CategoriaServlet.class.getName()).log(Level.SEVERE, null, ex);

@@ -1,15 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.ipn.mx.modelo.dto;
 
 import java.io.Serializable;
 
-/**
- *
- * @author levi1
- */
 public class GraficaDTO implements Serializable{
     private int cantidad;
     private String nombre;
@@ -37,6 +29,4 @@ public class GraficaDTO implements Serializable{
     public String toString() {
         return "GraficaDTO{" + "cantidad=" + cantidad + ", nombre=" + nombre + '}';
     }
-    
-    
 }

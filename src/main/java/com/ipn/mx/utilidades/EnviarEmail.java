@@ -13,10 +13,6 @@ import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-/**
- *
- * @author levi1
- */
 public class EnviarEmail {
     public void enviarCorreo(String destinatario, String asunto, String mensaje){
         Properties propiedades = new Properties();

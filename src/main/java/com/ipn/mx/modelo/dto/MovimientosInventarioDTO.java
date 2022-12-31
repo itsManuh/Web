@@ -1,17 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.ipn.mx.modelo.dto;
 
 import com.ipn.mx.modelo.entidades.MovimientosInventario;
 import java.io.Serializable;
 import lombok.Data;
 
-/**
- *
- * @author levi1
- */
 @Data
 public class MovimientosInventarioDTO implements Serializable{
     private MovimientosInventario entidad;

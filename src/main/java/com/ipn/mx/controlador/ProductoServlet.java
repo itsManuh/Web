@@ -48,10 +48,6 @@ public class ProductoServlet extends HttpServlet {
             case "verReporte":
                 mostrarReportePDF(request, response);
                 break;
-            case "graficar":
-                mostrarGrafica(request, response);
-                break;
-
         }
     }
 
@@ -107,15 +103,14 @@ public class ProductoServlet extends HttpServlet {
     }
 
     private void nuevaProducto(HttpServletRequest request, HttpServletResponse response) {
-        CategoriaDAO dao = new CategoriaDAO();
-        List lista;
-
+        RequestDispatcher rd = request.getRequestDispatcher("productos/productoform.jsp");
+        //CategoriaDAO dao = new CategoriaDAO();
+        //List lista;
         try {
-            lista = dao.readAll();
-            request.setAttribute("listado", lista);
-            RequestDispatcher rd = request.getRequestDispatcher("productos/productoform.jsp");
+            //lista = dao.readAll();
+            //request.setAttribute("listado", lista);
             rd.forward(request, response);
-        } catch (ServletException | IOException | SQLException ex) {
+        } catch (ServletException | IOException ex) {
             Logger.getLogger(ProductoServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
 
@@ -210,9 +205,4 @@ public class ProductoServlet extends HttpServlet {
     private void mostrarReportePDF(HttpServletRequest request, HttpServletResponse response) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-
-    private void mostrarGrafica(HttpServletRequest request, HttpServletResponse response) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
 }

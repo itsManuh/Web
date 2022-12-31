@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.ipn.mx.modelo.dao;
 
 import com.ipn.mx.modelo.dto.CategoriaDTO;
@@ -16,10 +12,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author levi1
- */
 public class MovimientosInventarioDAO {
     private static final String SQL_INSERT = 
             "insert into MovimientosInventario(tipoMovimiento,fechaMovimiento,cantidad,idProducto) values(?,?,?,?)";
@@ -35,9 +27,9 @@ public class MovimientosInventarioDAO {
     
     private Connection obtenerConexion(){
         String usuario = "root";
-        String clave = "escom";
+        String clave = "123456789";
         String driverMysql = "com.mysql.cj.jdbc.Driver";
-        String url = "jdbc:mysql://localhost:3306/ejercicio1_3cm17";
+        String url = "jdbc:mysql://localhost:3306/practica3";
         
         try{
             Class.forName(driverMysql);

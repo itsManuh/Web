@@ -1,17 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.ipn.mx.modelo.dto;
 
 import com.ipn.mx.modelo.entidades.Producto;
 import java.io.Serializable;
 import lombok.Data;
 
-/**
- *
- * @author levi1
- */
 @Data
 public class ProductoDTO implements Serializable{
     private Producto entidad;
@@ -19,7 +11,6 @@ public class ProductoDTO implements Serializable{
     public ProductoDTO(){
         entidad = new Producto();
     }
-
     
     @Override
     public String toString() {

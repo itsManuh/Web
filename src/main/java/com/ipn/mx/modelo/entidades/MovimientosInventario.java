@@ -12,5 +12,4 @@ public class MovimientosInventario {
     private Date fechaMovimiento;
     private int cantidad;
     private int idProducto;
-  
 }

@@ -13,6 +13,4 @@ public class Producto implements Serializable{
     private int precio;             
     private int existencia; 
     private int idCategoriaProducto;
-    
-    
 }

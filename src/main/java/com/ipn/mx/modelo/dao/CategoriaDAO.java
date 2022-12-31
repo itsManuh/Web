@@ -25,8 +25,8 @@ public class CategoriaDAO {
     private static final String SQL_SELECT = 
             "select * from CategoriaProducto where idCategoriaProducto = ?";
     private static final String SQL_GRAFICAR = 
-            "select CategoriaProducto.nombreCategoria as Nombre, count(Categoria.idCategoriaProducto) as Cantidad "
-            + "from CategoriaProducto INNER JOIN Producto ON Categoria.idCategoriaProducto = Producto.idCategoriaProducto "
+            "select CategoriaProducto.nombreCategoria as Nombre, count(CategoriaProducto.idCategoriaProducto) as Cantidad "
+            + "from CategoriaProducto INNER JOIN Producto ON CategoriaProducto.idCategoriaProducto = Producto.idCategoriaProducto "
             + "group by Producto.idCategoriaProducto";
     private Connection con;
     
@@ -100,10 +100,6 @@ public class CategoriaDAO {
                 return (CategoriaDTO) resultados.get(0);
             else
                 return null;
-            /*rs.next();
-                System.out.println("Clave: "+rs.getInt("idCategoria") + ", Nombre categoria: " + rs.getString("nombreCategoria")
-                + ", Descripcion: " + rs.getString("descripcionCategoria"));
-                */
         }finally{
             if(rs != null) rs.close();
             if(ps != null) ps.close();
@@ -136,10 +132,6 @@ public class CategoriaDAO {
                 return resultados;
             else
                 return null;
-            /*rs.next();
-                System.out.println("Clave: "+rs.getInt("idCategoria") + ", Nombre categoria: " + rs.getString("nombreCategoria")
-                + ", Descripcion: " + rs.getString("descripcionCategoria"));
-                */
         }finally{
             if(rs != null) rs.close();
             if(ps != null) ps.close();

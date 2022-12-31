@@ -1,75 +1,64 @@
-<%-- 
-    Document   : mostrarCategoria
-    Created on : 13 dic. 2022, 20:15:59
-    Author     : levi1
---%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+
         <title>Categorias</title>
-        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css'>
-        <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js'></script>
-        <script>
-            $(document).ready(function () {
-                $('.sidenav').sidenav();
-                $('.tabs').tabs();
-                $('select').formSelect();
-            });
-        </script>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/jquery-3.6.1.min.js"></script>   
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
-    <body class='grey'>
-        <nav>
-            <div class='nav-wrapper green darken-1'>
-                <a href='index.jsp' class='brand-logo'>Practica 3</a>
-                <a href='#' data-target='mobile-demo' class='sidenav-trigger'><i class='material-icons'>menu</i></a>
-                <ul class='right hide-on-med-and-down'>
-                    <li><a href="CategoriaServlet?accion=listaDeCategorias">Categorías</a></li>
-                    <li><a href="ProductoServlet?accion=listaDeProductos">Productos</a></li>
-                    <li><a href="MovimientosServlet?accion=listaDeMovimientos">Movimientos</a></li>
-                </ul>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.jsp">Practica 3 </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./CategoriaServlet?accion=listaDeCategorias">Categorias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./CategoriaServlet?accion=graficar">Grafica</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="ProductoServlet?accion=listaDeProductos">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="MovimientoServlet?accion=listaDeMovimientos">Movimientos</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
-        <ul class='sidenav' id='mobile-demo'>
-            <li><a href="CategoriaServlet?accion=listaDeCategorias">Categorías</a></li>
-            <li><a href="ProductoServlet?accion=listaDeProductos">Productos</a></li> 
-            <li><a href="MovimientosServlet?accion=listaDeMovimientos">Movimientos</a></li>
-        </ul>
-        <br>
-        <div class='container white z-depth-5'>
-            <div class='row'>
-                <br>
-                <h2 align='center'>Ver categoria</h2>
-                <br>
-                <table class='centered responsive-table'>
-                    <tbody>
-                        <tr>
-                            <td width='35%'><b>Identificador</b></td>
-                            <td width='65%'><c:out value="${dto.entidad.idCategoriaProducto}"/></td>
-                        </tr>
-                        <tr>
-                            <td width='35%'><b>Descripción</b></td>
-                            <td width='65%'><c:out value="${dto.entidad.nombreCategoria}"/></td>
-                        </tr>
-                        <tr>
-                            <td width='35%'><b>Nombre</b></td>
-                            <td width='65%'><c:out value="${dto.entidad.descripcionCategoria}"/></td>
-                        </tr>
 
+        <div class="container">
+            <div class="row pt-2">
+                <div class="mb-3">
+                    <h2 class="text-center">Ver Categoria</h2>
+                </div>
+                <div class="mb-3"><a class="btn btn-dark w-100" href="javascript: history.go(-1)">Regresar</a></div>
+                <table class="table table-dark w-100 table-striped">
+                    <tr>
+                        <th>ID</th>
+                        <th><c:out value="${dto.entidad.idCategoriaProducto}"/></th>
+                    </tr>
+                    <tr>
+                        <th>Nombre</th>
+                        <th><c:out value="${dto.entidad.nombreCategoria}"/></th>
+                    </tr>
+                    <tr>
+                        <th>Descripcion</th>
+                        <th><c:out value="${dto.entidad.descripcionCategoria}"/></th>
+                    </tr>
                 </table>
-                </tbody>
-                <div class='col s12 m12 l12'><br></div>
-                <br>
             </div>
-            <div class='col s4 m4 l4 offset-m4 offset-l4 offset-s4' align='center'>
-                <a class='waves-effect waves-light btn green lighten-1' href='CategoriaServlet?accion=listaDeCategorias'>Listado de categorias</a>
-            </div>
-            <div class='col s12 m12 l12'><br></div>
-            <br>
         </div>
-    </div>
 </body>
 </html>
 

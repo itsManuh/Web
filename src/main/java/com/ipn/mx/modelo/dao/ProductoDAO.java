@@ -1,6 +1,5 @@
 package com.ipn.mx.modelo.dao;
 
-
 import com.ipn.mx.modelo.dto.ProductoDTO;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,15 +11,11 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author levi1
- */
 public class ProductoDAO {
     private static final String SQL_INSERT = 
             "insert into producto(nombreProducto,descripcionProducto,precio,existencia,idCategoriaProducto) values(?,?,?,?,?)";
     private static final String SQL_UPDATE = 
-            "update producto set nombreProducto  = ?, descripcionProducto = ?, precio = ?, existencia = ?, idCategoriaProducto = ? where idProducto = ?";
+            "update producto set nombreProducto = ?, descripcionProducto = ?, precio = ?, existencia = ?, idCategoriaProducto = ? where idProducto = ?";
     private static final String SQL_DELETE = 
             "delete from producto where idProducto = ?";
     private static final String SQL_SELECT_ALL = 
@@ -35,15 +30,12 @@ public class ProductoDAO {
         String driverMysql = "com.mysql.cj.jdbc.Driver";
         String url = "jdbc:mysql://localhost:3306/practica3";
         
-        
         try {
             Class.forName(driverMysql);
             con = DriverManager.getConnection(url,usuario,clave);
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(ProductoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-            
-        
         return con;
     }
     
@@ -109,10 +101,6 @@ public class ProductoDAO {
                 return (ProductoDTO) resultados.get(0);
             else
                 return null;
-            /*rs.next();
-                System.out.println("Clave: "+rs.getInt("idCategoria") + ", Nombre categoria: " + rs.getString("nombreCategoria")
-                + ", Descripcion: " + rs.getString("descripcionCategoria"));
-                */
         }finally{
             if(rs != null) rs.close();
             if(ps != null) ps.close();
@@ -148,10 +136,6 @@ public class ProductoDAO {
                 return resultados;
             else
                 return null;
-            /*rs.next();
-                System.out.println("Clave: "+rs.getInt("idCategoria") + ", Nombre categoria: " + rs.getString("nombreCategoria")
-                + ", Descripcion: " + rs.getString("descripcionCategoria"));
-                */
         }finally{
             if(rs != null) rs.close();
             if(ps != null) ps.close();
